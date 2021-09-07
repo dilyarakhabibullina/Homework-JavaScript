@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        function mySumFunction(arg1, arg2) {
+            return arg1 + arg2;
+        }
+
+        function myDifferenceFunction(arg1, arg2) {
+            return arg1 - arg2;
+        }
+
+        function myMultiplyFunction(arg1, arg2) {
+            return arg1 * arg2;
+        }
+        function myDivideFunction(arg1, arg2) {
+            return arg1 / arg2;
+        }
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return mySumFunction(arg1, arg2);
+                case "-":
+                    return myDifferenceFunction(arg1, arg2);
+                case "*":
+                    return myMultiplyFunction(arg1, arg2);
+                case "/":
+                    return myDivideFunction(arg1, arg2);
+                default:
+                    alert("Вы ввели что-то не то");
+            }
+        }
+        var arg1 = +prompt("Введите число (arg1)");
+        var arg2 = +prompt("Введите другое число (arg2)");
+        var operation = prompt("Что будем делать с этими числами? (+, -, * или /");
+        alert(mathOperation(arg1, arg2, operation));
+
+    </script>
+</body>
+
+</html>
