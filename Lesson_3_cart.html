@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+
+<body>
+    <script>
+
+        // задание 2 и 3
+
+        var goods = [
+            {
+                title: "очки",
+                price: 30,
+                amount: 2
+            },
+            {
+                title: "духи",
+                price: 10,
+                amount: 3
+            },
+            {
+                title: "помада",
+                price: 5,
+                amount: 4
+            }
+        ];
+        function totalCart([goods]) {
+            var totalGood = 0;
+            for (var item of goods) {
+                totalGood += item.price * item.amount;
+            }
+            return totalGood;
+        }
+        alert(totalCart([goods]));
+    </script>
+</body>
+
+</html>
