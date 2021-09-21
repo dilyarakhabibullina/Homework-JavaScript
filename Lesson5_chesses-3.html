@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <div class="div">
+        <style>
+            table,
+            td {
+                display: flex;
+                border: 1px solid black;
+                height: 100px;
+                width: 100px;
+                /* background-color: brown; */
+            }
+
+            .cell {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #item_11,
+            #item_21,
+            #item_31,
+            #item_41,
+            #item_51,
+            #item_61,
+            #item_71,
+            #item_81,
+            #item_92,
+            #item_93,
+            #item_94,
+            #item_95,
+            #item_96,
+            #item_97,
+            #item_98,
+            #item_99 {
+                transform: rotate(180deg);
+            }
+
+            #item_1 {
+                border-top: none;
+                border-left: none;
+
+            }
+        </style>
+    </div>
+    <script>
+        var table = document.createElement("table"), tr, td;
+        for (let i = 1; i <= 10; i++) {
+            tr = document.createElement("tr");
+
+            table.append(tr);
+            td = document.createElement("td");
+
+            for (let j = 1; j <= 10; j++) {
+                td = document.createElement("td");
+                td.innerHTML = "<h2>" + (j + i) + "</h2>";
+                tr.append(td);
+            }
+            for (let j = 0; j <= 100; j++) {
+                //td = document.createElement("td");
+                td.innerHTML = ("<h2>" + (j + i) + "</h2>") + ("<h1>" + "&#9817;</h1>");
+                // tr.append(td);
+            }
+
+
+            document.querySelector("div").append(table);
+            var h2 = document.querySelectorAll('td h2');
+
+            var td = document.querySelectorAll('td');
+            for (let i = 0; i < h2.length; i++) {
+                td[i].setAttribute("class", "cell");
+                td[i].id = "item_" + (i + 1);
+
+            }
+
+            for (var k = 0; k < h2.length; k++) {
+
+                var num = +h2[k].textContent;
+                // num.style.display = "none";
+                if (!(num % 2)) {
+                    h2[k].parentNode.style.backgroundColor = "gray";
+                    h2[k].parentNode.style.color = "#ffffff"
+                }
+                else { h2[k].parentNode.style.color = "brown" }
+                if (k < 10) {
+                    h2[k].parentNode.style.backgroundColor = "#ffffff";
+                    h2[k].parentNode.style.border = "none";
+                    h2[k].parentNode.style.color = "black";
+                    h2[k].innerHTML = ("<h1>" + k + "</h1>");
+                }
+                if (k > 89) {
+                    h2[k].parentNode.style.backgroundColor = "#ffffff";
+                    h2[k].parentNode.style.border = "none";
+                    h2[k].parentNode.style.color = "black";
+                    h2[k].innerHTML = ("<h1>" + (k - 90) + "</h1>");
+
+                }
+                if (!(k % 10)) {
+                    h2[k].parentNode.style.backgroundColor = "#ffffff";
+                    h2[k].parentNode.style.border = "none";
+                    h2[k].parentNode.style.color = "black";
+
+                }
+                if (k % 10 == 9) {
+                    h2[k].parentNode.style.backgroundColor = "#ffffff";
+                    h2[k].parentNode.style.border = "none";
+                    h2[k].parentNode.style.color = "black";
+                }
+                if (k == 10) h2[k].innerHTML = ("<h1>" + "h" + "</h1>");
+                if (k == 20) h2[k].innerHTML = ("<h1>" + "g" + "</h1>");
+                if (k == 30) h2[k].innerHTML = ("<h1>" + "f" + "</h1>");
+                if (k == 40) h2[k].innerHTML = ("<h1>" + "e" + "</h1>");
+                if (k == 50) h2[k].innerHTML = ("<h1>" + "d" + "</h1>");
+                if (k == 60) h2[k].innerHTML = ("<h1>" + "c" + "</h1>");
+                if (k == 70) h2[k].innerHTML = ("<h1>" + "b" + "</h1>");
+                if (k == 80) h2[k].innerHTML = ("<h1>" + "a" + "</h1>");
+                if (k == 19) h2[k].innerHTML = ("<h1>" + "h" + "</h1>");
+                if (k == 29) h2[k].innerHTML = ("<h1>" + "g" + "</h1>");
+                if (k == 39) h2[k].innerHTML = ("<h1>" + "f" + "</h1>");
+                if (k == 49) h2[k].innerHTML = ("<h1>" + "e" + "</h1>");
+                if (k == 59) h2[k].innerHTML = ("<h1>" + "d" + "</h1>");
+                if (k == 69) h2[k].innerHTML = ("<h1>" + "c" + "</h1>");
+                if (k == 79) h2[k].innerHTML = ("<h1>" + "b" + "</h1>");
+                if (k == 89) h2[k].innerHTML = ("<h1>" + "a" + "</h1>");
+                if (k == 0 || k == 99 || k == 9 || k == 90) h2[k].parentNode.style.color = "#ffffff";
+
+                while (k % 10 == 2) {
+                    h2[k].insertAdjacentHTML("beforebegin", ("<h1>&#9817;</h1>"));
+                    break;
+
+                }
+
+                //   var mas = document.querySelectorAll('tr');
+
+            }
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
