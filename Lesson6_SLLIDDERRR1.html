@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<script>
+    function init() {
+
+
+        var smallPic = document.getElementsByTagName('img');
+        for (j = 1; j < 4; j++) {
+            var src = "img/big/" + j + ".jpg";
+            var imgBig = document.createElement("img");
+            imgBig.src = src;
+            console.log(src);
+            var btn = document.getElementById('frwrd');
+            console.log(btn);
+            btn.onclick = changePic;
+            console.log(changePic);
+        }
+
+        function changePic(e) {
+            var btn = e.target;
+            var divForBigImg = document.getElementById("largeImg");
+            divForBigImg.innerHTML = "";
+            divForBigImg.appendChild(imgBig);
+        }
+
+    }
+
+    window.onload = init;
+
+</script>
+
+<body>
+    <div id="smallImgs">
+        <img src="img/small/1.jpg" alt="s1" id="id_1">
+        <img src="img/small/2.jpg" alt="s2" id="id_2">
+        <img src="img/small/3.jpg" alt="s3" id="id_3">
+    </div>
+    <div id="largeImg"></div>
+
+    <button id="frwrd">Forward</button>
+</body>
+
+</html>
