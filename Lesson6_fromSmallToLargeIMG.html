@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<script>
+    function init() {
+        var imgs = document.getElementsByTagName('img');
+        for (var i = 0; i < imgs.length; i++) {
+            console.log(imgs);
+            imgs[i].onclick = showLargePic;
+
+        }
+    }
+    function showLargePic(e) {
+        var divForBigImg = document.getElementById("largeImg");
+        divForBigImg.innerHTML = "";
+        ////очищаем картинку
+
+        // var divForSmallImg = document.getElementById("smallImgs");
+        // divForSmallImg.innerHTML = "";
+
+        var eventElement = e.target;// что это?
+        var imgTitleSplit = eventElement.id.split("_");// что это?
+        var src = "img/big/" + imgTitleSplit[1] + ".jpg";
+        var imgBig = document.createElement("img");
+        imgBig.src = src;
+        divForBigImg.appendChild(imgBig);
+        imgBig.onerror = function () {
+            alert("Нет подходящей картинки");
+
+        }
+    }
+
+
+
+    window.onload = init;
+
+
+</script>
+
+<body>
+
+
+    <div id="smallImgs">
+        <img src="img/small/1.jpg" alt="s1" id="id_1">
+        <img src="img/small/2.jpg" alt="s2" id="id_2">
+        <img src="img/small/3.jpg" alt="s3" id="id_3">
+    </div>
+    <div id="largeImg"></div>
+</body>
+
+</html>
