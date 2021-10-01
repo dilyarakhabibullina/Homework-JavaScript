@@ -1,0 +1,44 @@
+        if (!("a" in window)) {
+            var a = 1;
+        }
+        console.log(a)
+
+        выведется undefined
+        
+
+
+var b = function a(x) {
+            x && a(--x);
+        };
+        alert(a);
+
+        выведется undefined
+
+        function a(x) {
+            return x * 2;
+        }
+        var a;
+        alert(a);
+
+выведется сама функция: "function a(x) {
+        return x * 2;
+                }
+        var a;
+        alert(a); "
+
+
+        function b(x, y, a) {
+            arguments[2] = 10;
+            alert(a);
+        }
+        b(1, 2, 3);
+
+        выводится 10, так как arguments - это подобный массиву объект, который содержит аргументы, переданные в функцию.
+        То есть мы передаем в переменную a число 10, а потом выводим переменную а.Поэтому выводится 10.
+
+
+        function a() {
+            alert(this);
+        }
+        a.call(null);
+выводится object Window
